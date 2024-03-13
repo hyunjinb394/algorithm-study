@@ -1,11 +1,12 @@
-n = int(input('동전 갯수 입력 : '))
-coin = list(map(int,input('동전 입력 : ').split()))
+n = int(input('동전 갯수 입력 : '))                         #[5개]
+coin = list(map(int,input('동전 입력 : ').split()))         #[3 2 1 1 9]
 
 coin.sort()
 
-num_list = [i for i in range(1, sum(coin)+1)]
+ans = 1 
+for x in coin:
+    if ans < x:
+        break
+    ans += x
 
-for n in num_list:
-    ans = n
-    
-    
+print(ans)
