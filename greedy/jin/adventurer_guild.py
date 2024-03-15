@@ -24,3 +24,5 @@ for horror in data :
 
 print(group)
  
+
+# sort, sorted 정렬은 최악의 경우에도 항상 O(NlogN)을 보장

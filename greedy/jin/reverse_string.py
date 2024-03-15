@@ -16,4 +16,7 @@ count = 0
 for i in range(len(S)-1):
     if S[i] != S[i+1]:
         count += 1
-print((count + 1) // 2) # 0
+print((count + 1) // 2) 
+
+# 변경점은 항상 그 변경 되어야할 수의 2배 
+# 홀수번째는 마지막에 변경점을 +1 추가를 해서 //2

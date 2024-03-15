@@ -34,7 +34,7 @@ def solution(food_times, k):
                 k %= length
                 sublist = sorted(foods[i:], key= itemgetter(1) )
                 return sublist[k][1]
-        n -=1
+        length -=1
 
     return -1
 
