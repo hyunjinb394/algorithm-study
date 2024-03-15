@@ -30,3 +30,15 @@ for i in range(n):
 
 print(result)
 
+
+# 4. 리스트 컴프리핸션으로 풀어보기
+
+n, m = map(int, input().split())
+
+# 각 행에서의 최소값을 찾아 그 중 최대값을 result에 할당
+# 이때 언더스코어(_)는 어떤 특정 값을 무시하기 위한 용도로 사용 
+# 언더스코어 사용 시 변수 없이 반복문이 실행됨
+
+result = max([min(map(int, input().split())) for _ in range(n)])
+
+print(result)
