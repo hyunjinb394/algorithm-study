@@ -64,3 +64,57 @@ def solution(key, lock):
                 for j in range(m):
                     new_lock[x + i][y + j] -= key[i][j]
     return False
+
+
+
+
+# 혁준
+# Convolution Neural Network Padding 개념 사용
+# CNN에서 이미지 크기 유지를 위해서 padding을 사용하는 것에서 문제풀이 인사이트를 얻음
+ 
+key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
+lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
+import numpy as np
+
+def solution(key, lock):
+    N = len(lock)
+    M = len(key)
+
+    padded_lock = padding(lock, M-1)
+
+    for _ in range(4):
+        for i in range(N+2*(M-1)):
+            for j in range(N+2*(M-1)):
+                np_key = np.array(key)
+                total = padded_lock[i:i+M, j:j+M] + np_key
+
+                # 모든 lock 부분이 1이 되는지 확인
+                if np.all(total[M-1:M-1+N, M-1:M-1+N] == 1):  
+                    return True
+        key = rotate(key)
+    return False
+
+
+def padding(mat, M):
+    # mat의 크기
+    N = len(mat)
+    # 패딩의 크기
+    pad_size = N + 2*(M-1)  # 원본 크기 + (상하좌우 각각 M-1개씩 추가)
+
+    # 패딩된 리스트 생성 (전부 0으로 초기화)
+    padded_mat = [[0]*pad_size for _ in range(pad_size)]
+
+    # 원본 mat의 내용을 새 리스트의 가운데에 복사
+    for i in range(N):
+        for j in range(N):
+            padded_mat[i+(M-1)][j+(M-1)] = mat[i][j]
+
+    return np.array(padded_mat)
+
+    
+def rotate(mat):
+    n = len(mat)
+    # 시계 방향으로 90도 회전한 행렬을 생성
+    # 원래 행렬의 열을 거꾸로 한 순서대로 새 행렬의 행으로 설정
+    rotated_mat = [[mat[n-j-1][i] for j in range(n)] for i in range(n)]
+    return rotated_mat
