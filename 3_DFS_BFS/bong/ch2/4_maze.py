@@ -1,4 +1,4 @@
-#https://school.programmers.co.kr/learn/courses/30/lessons/1844
+#혁준 게임맵 최단과 완벽히 동일
 
 from collections import deque
 
@@ -22,5 +22,5 @@ def sol(road):
 
     return -1  # 상대 팀 진영에 도착할 수 없는 경우
 
-a =[[1,0,1,1,1],[1,0,1,0,1],[1,0,1,1,1],[1,1,1,0,1],[0,0,0,0,1]]
+a =[[1,0,1,0,1,0],[1,1,1,1,1,1],[0,0,0,0,0,1],[1,1,1,1,1,1],[1,1,1,1,1,1]]
 print(sol(a))
