@@ -1,6 +1,15 @@
 ## 넓은 탐색 (Breadth-First Search, BFS)
 
 1. 동작 원리
+
+<center>
+  <img
+    src="../image/BFS_DFS.png"
+    width="400"
+    height="300"
+  />
+</center>
+
 * 시작 노드에서 가까운 노드부터 차례대로 모든 노드를 탐색
 * 현재 노드에서 방문할 수 있는 모든 인접 노드를 먼저 방문한 뒤, 그 인접 노드들의 인접 노드들을 차례로 방문
 

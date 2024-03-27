@@ -1,6 +1,15 @@
 ## 깊은 탐색 (Depth-First Search, DFS)
 
 1. 동작 원리
+
+<center>
+  <img
+    src="../image/BFS_DFS.png"
+    width="400"
+    height="300"
+  />
+</center>
+
 * 시작 노드에서 탐색
 * 현재 노드에서 방문할 수 있는 하나의 인접 노드를 선택
 * 선택한 노드로 이동 후 그 노드의 인접 노드 중 하나를 선택
