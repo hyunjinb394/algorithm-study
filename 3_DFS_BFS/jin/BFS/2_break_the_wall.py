@@ -13,13 +13,13 @@
 from collections import deque
 
 n,m = map(int, input().split())
-graph = []
+# graph = []
+# for i in range(n):
+#     graph.append(list(map(int, input())))
+graph = [list(map(int, input())) for _ in range(n)]
 
 visited = [[[0]*2 for _ in range(m)] for _ in range(n)]
 visited[0][0][0] = 1
-
-for i in range(n):
-    graph.append(list(map(int, input())))
 
 # 상하좌우
 dx = [0, 0, 1, -1]
