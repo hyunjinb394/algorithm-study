@@ -3,6 +3,8 @@
 #dfs 방식을 풀면 될듯
 
 def solution(n, comps):
+    state = [False] * n
+    ans = 0
     def netw(node):
         stack = [node]
         while stack:
@@ -13,8 +15,6 @@ def solution(n, comps):
                     if comps[current][i] == 1 and not state[i]:
                         stack.append(i)
 
-    state = [False] * n
-    ans = 0
     for i in range(n):
         if not state[i]:
             netw(i)
