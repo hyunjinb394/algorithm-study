@@ -4,6 +4,7 @@
 n = int(input("학생 수: "))
 nlist = [input().split() for _ in range(n)]
 
+#lamda는 sorted()함수의 변수를 설정해줌. 변수를 key가 배열x의[1]에 해당한다고 표기함으로서 아래처럼 사용가능.
 nlist = sorted([[l[0],int(l[1])] for l in nlist],key = lambda x: x[1])
 
 print(nlist)
