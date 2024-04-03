@@ -11,14 +11,15 @@ student_info = [(input().split()[0], int(input().split[1])) for _ in range(N)]
 sorted_data = sorted(student_info, key=lambda x : x[1])
 
 for student in sorted_data:
-    print(student[0])
+    print(student[0], end=' ')
 
 
 # 3. 효율적인 답안
 # 이름과 성적 입력받는 부분을 문제 조건에 맞게 수정
+
 N = int(input())
 student_info = [tuple(input().split()) for _ in range(N)]
 sorted_data = sorted(student_info, key=lambda x: int(x[1]))
 
 for student in sorted_data:
-    print(student[0])
+    print(student[0], end=' ')
