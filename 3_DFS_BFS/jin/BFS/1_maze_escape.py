@@ -99,3 +99,59 @@ def bfs(x, y):
     return graph[n-1][m-1]
 
 print(bfs(0, 0))
+
+
+
+# 4. 팀원 풀이
+
+# 혁준
+from collections import deque
+
+def solution(N,M,mat):
+    sol = BFS(N,M,mat)
+    print(sol)
+
+def BFS(N,M,mat):
+    que = deque()
+    que.append((0,0))
+
+    dx = [1,-1,0,0]
+    dy = [0,0,1,-1]
+
+    while que:
+        n, m = que.popleft()
+
+        for i in range(4):
+            x = m+dx[i]
+            y = n+dy[i]
+            if x<0 or x>=M or y<0 or y>=N:
+                continue
+            else:
+                if mat[y][x] == 1:
+                    que.append((y,x))
+                    # 미로의 경로 자체에 몇 칸 지났는지 기록
+                    mat[y][x] = mat[n][m] + 1
+    return mat[N-1][M-1]
+
+
+# 봉준
+
+def sol(road):
+    n = len(road)                            #지도의 가로 길이
+    m = len(road[0])                         #지도의 세로 길이
+    direc = [(-1,0),(1,0),(0,-1),(0,1)]     #방향 설정    
+
+    que = deque([(0,0,1)])                  #위치 + 지나간 거리
+    
+    while que:
+        x,y,move = que.popleft()
+        if x == n - 1 and y == m - 1:  # 상대 팀 진영 도착 시 거리 반환
+            return move
+
+        for dx, dy in direc:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < n and 0 <= ny < m and road[nx][ny] == 1:
+                que.append((nx, ny, move + 1))
+                road[nx][ny] = 0  # 방문한 곳은 0으로 표시하여 다시 방문하지 않도록 함
+
+    return -1  # 상대 팀 진영에 도착할 수 없는 경우
