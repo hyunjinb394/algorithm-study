@@ -45,7 +45,7 @@ from collections import deque
 
 n, m = map(int, input().split())
 road = [list(map(int, input())) for _ in range(n)]
-
+road[0][0] = 2
 
 direc = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 que = deque([(0, 0, 1, 1)])  # x, y, 이동, 부술수 있는 벽 수
@@ -77,6 +77,7 @@ $ python b_break_wall.py
 0110110
 0110110
 0010111
+0000110
 -1
 '''
 
