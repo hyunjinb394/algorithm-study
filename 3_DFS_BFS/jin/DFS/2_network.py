@@ -44,24 +44,24 @@ start_memory = memory_usage()
 # 봉준 (시간 1 ms/ 메모리 0.00390625 MB)
 # 스택 사용
 
-# def solution(n, comps):
-#     def netw(node):
-#         stack = [node]
-#         while stack:
-#             current = stack.pop()
-#             if not state[current]:
-#                 state[current] = True
-#                 for i in range(n):
-#                     if comps[current][i] == 1 and not state[i]:
-#                         stack.append(i)
+def solution(n, comps):
+    def netw(node):
+        stack = [node]
+        while stack:
+            current = stack.pop()
+            if not state[current]:
+                state[current] = True
+                for i in range(n):
+                    if comps[current][i] == 1 and not state[i]:
+                        stack.append(i)
 
-#     state = [False] * n
-#     ans = 0
-#     for i in range(n):
-#         if not state[i]:
-#             netw(i)
-#             ans += 1
-#     return ans
+    state = [False] * n
+    ans = 0
+    for i in range(n):
+        if not state[i]:
+            netw(i)
+            ans += 1
+    return ans
 
 
 
