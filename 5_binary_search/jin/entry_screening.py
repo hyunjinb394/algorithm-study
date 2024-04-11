@@ -36,4 +36,3 @@ def solution(n, times):
     return answer
 
 
-# 3. 효율적인 답안

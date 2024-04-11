@@ -49,5 +49,3 @@ output = binary_search(data, target, 0, n-1)
 
 ```
 
-
-3. 사용 예시
