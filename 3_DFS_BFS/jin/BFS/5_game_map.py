@@ -53,5 +53,3 @@ def solution(maps):
 
     return bfs(0, 0)
 
-
-# 3. 효율적인 답안

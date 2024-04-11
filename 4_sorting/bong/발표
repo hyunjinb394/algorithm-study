@@ -22,12 +22,12 @@ reverse = True로 해야함.
 --------
 변경 가능한 객체(mutable objects), 변경 불가능 한 객체(immutable objects) +(얕은 복사/깊은 복사)
 
-a = 100
+a = 100  # 깊은 복사
 b = a
 b = 200
 print(a)        #답 100
 
-c = [1,4,3,4,5]
+c = [1,4,3,4,5] # 얕은복사, 변경 가능
 d = c
 c.sort()
 print(d)        #답  [1, 3, 4, 4, 5]
