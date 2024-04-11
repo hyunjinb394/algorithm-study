@@ -82,7 +82,13 @@ import time
 
 # 테스트 케이스 정의
 n, m = 1000000, 2000000000  
-ddeoks = np.arange(1, n+1)  
+# ddeoks = np.arange(1, n+1)  
+ddeoks = np.arange(ddeoks, dtype=np.float64)
+
+# 넘파이 배열은 같은 타입의 요소만 가질 수 있음
+# 넘파이는 기본으로 정수형은 int 32비트 고정, 실수형은 float 64
+# 다른 타입끼리의 연산이 일어나면 오버헤드가 발생 가능
+# dtype 지정하지 않으면 mid = (start + end) // 2  mid 값에 32비트가 넘는 숫자가 뜰 수 있음
 
 start, end = 0, ddeoks.max()
 result = 0
@@ -90,7 +96,7 @@ result = 0
 start_time = time.time() 
 
 while start <= end:
-    mid = (start + end) // 2
+    mid = (start + end) // 2  
     total = np.sum(ddeoks[ddeoks > mid] - mid)  
 
     if total < m:
@@ -104,7 +110,8 @@ end_time = time.time()
 print(result)
 print(f"실행 시간: {end_time - start_time} 초")
 
-# 0.068 - 0.099 초
+# 0.068 - 0.099 초 -> time 모듈로 시간측정 -> 중간에 연산이 멈춰서 빠른 것
 # 백준은 np 같은 외부 라이브러리 사용 불가
-# time 모듈로 시간 측정
+# python 3.0 으로 시험보는 회사들은 대부분 numpy 사용불가능
+
 
