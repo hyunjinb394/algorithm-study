@@ -6,7 +6,7 @@
 # dlist = [int(input()) for _ in range(n)]
 import numpy as np
 
-n, m = 4, 6
+n, m = 4, 25
 dlist = [19, 15, 10, 17]
 
 #시간 복잡도 m회. logm이상이므로 불가
@@ -29,18 +29,23 @@ def time_over_ans(n,m,dlist):
 
     print(max(dlist)-ans)
 
-#책 풀이
+#책 풀이(에 약간 추가)
 def ans(m,dlist):
     start =0
     end = max(dlist)
-    while (start <= end):
+    while (start <= end):                   #logm회
         total = 0
         mid = (start+ end)//2
-        for x in dlist:
+        for x in dlist:                     #n회            ->nlogm회
             if x > mid:
                 total += x -mid
         if total < m:
             end = mid -1
+
+        #elif를 추가함. 이를 사용하지 않았다면 어떤 경우에도 nlogm회 실행. 하지만 이경우를 추가하는 경우 nlogm회 이전에 끝날수 있음. 하지만 최악의 약1.5배 길어질수도
+        elif total == m:
+            result = mid
+            return result
 
         else:
             result = mid
@@ -48,4 +53,4 @@ def ans(m,dlist):
     return result 
 
 
-
+print(ans(m,dlist))
