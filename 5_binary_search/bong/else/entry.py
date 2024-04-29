@@ -12,17 +12,14 @@ def sol(n,times):
 
     while start <=end:
         mid = (start + end)//2   
-
         human = 0                                  #통과한 사람
+        
         for i in times:
             human += mid//i                        #human은 통과한 사람 총합
                                   
-        if human > n:       #만일 human 크다면 통과할 사람 수를 줄여야함
+        if human >= n:       #만일 human 크다면 통과할 사람 수를 줄여야함
             ans = mid
             end = mid -1
-        elif human == n:     #만일 human 작다면 통과할 사람 수 늘려야함
-            ans = mid
-            return ans
         else:
             start = mid +1
     return ans
