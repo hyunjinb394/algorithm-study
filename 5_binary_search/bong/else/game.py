@@ -1,13 +1,13 @@
 # https://www.acmicpc.net/problem/1072
 # 게임 횟수 10^9회 이하.
 # 제한 시간 2초이므로 N회 불가능. 
-
+import math
 
 def additional_games(X, Y):
     Z = (Y * 100) // X
-    if Z == 100:
+    if Z == 100 or Z == 99:
         return -1
-    return (X*(Z+1)-100*Y)/(100-(Z+1))
+    return math.ceil((X*(Z+1)-100*Y)/(100-(Z+1)))
     
 
 # 입력 받기
