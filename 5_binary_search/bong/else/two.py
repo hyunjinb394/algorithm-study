@@ -9,17 +9,21 @@ liq = list(map(int,sys.stdin.readline().split()))
 #최대 nlogn회 => 5*(10^5)
 liq.sort()
 
-ans = [liq[0],liq[n-1]]
-tozero = float('inf')
+left = 0
+right = n-1
+ph = float('inf')
 
-for i in liq:
-    if i < 0: break
-    for j in reversed(liq):
-        if j > 0: break
-        if tozero > abs(i+j):
-            ans[0] = i
-            ans[1] = j
-        else:
-            break
+while left < right:
+    check = liq[left]+liq[right]
+    if abs(ph) > abs(check):
+        ph = check
+        ans_left = liq[left]
+        ans_right = liq[right]
+    
+    if check > 0:
+        right -= 1
+    elif check < 0:
+        left += 1
+    else: break
 
-print(ans[0], ans[1])
+print(ans_left,ans_right)    
