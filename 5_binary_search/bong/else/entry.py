@@ -7,7 +7,7 @@ n = 6
 times = [7,10]
 
 def sol(n,times):
-    start = min(times)      #start =1로 놓으면 답이나오고, min(times)로 놓으면 답이 안나옴.......
+    start = min(times)      # start =1로 놓으면 답이나오고, min(times)로 놓으면 답이 안나옴.......
     end = max(times)*n
 
     while start <=end:
