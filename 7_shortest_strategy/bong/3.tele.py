@@ -13,8 +13,7 @@ INF = int(1e9)
 def sol(N ,P, C):
 
     #초기 시간 설정
-    graph = [[INF]*(N+1) for _ in range(N+1)]
-    graph = [[0 if i==j else graph[i][j] for j in range(N+1)] for i in range(N+1)]
+    graph = [[0 if i==j else INF for j in range(N+1)] for i in range(N+1)]
 
     #입력값을 통해 직접적인 값은 입력
     for i in P:
