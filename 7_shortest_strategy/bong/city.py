@@ -46,8 +46,9 @@ def sol(k,x,P):
     
     #a = 시작점, b = 끝점, d는 거리
     a = [x]
-    b = []
+    b = [x]
     d = 0
+    P = rm(P,b)
     
     while d != k:
         b = find(P,a)
