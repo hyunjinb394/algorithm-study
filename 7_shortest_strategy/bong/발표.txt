@@ -1,0 +1,7 @@
+graph = [[INF]*(n + 1) for _ in range(n + 1)]
+graph = [[0 if i == j else graph[i][j] for j in range(n + 1)] for i in range(n + 1)]
+
+graph = [[INF]*(n + 1) for _ in range(n + 1)]
+graph = [[0 if i == j else graph[i][j] for j in range(1,n + 1)] for i in range(1,n + 1)]
+
+리스트 컴프리핸션을 실행시 주소를 할당 받음. 그 주소가 실행 이후 변수의 주소가 됨. 위의 경우 2번 실행 되므로 주소가 2번 바뀜
