@@ -5,12 +5,14 @@
 # index error가 뜨는데 왜 뜨는지 모르겠어요...
 n = int(input())
 inp = [int(input()) for _ in range(n)]
+inp.sort()
 large = inp[-1]
 
 def sol(L):   #L은 가장 큰수
     ans = [[1,0,0],[0,1,0],[1,1,1]]
 
-    if L <= 3: return ans
+
+    if L <= 3: return ans[:L]
 
     for i in range(3,L):       
         # k = [0,0,0]                               # 현진님 주석 처리한 부분 k= [0,0,0]으로 초기화 하지 않으면 이상하게 나와요
