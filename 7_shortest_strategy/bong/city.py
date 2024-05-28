@@ -60,6 +60,8 @@ def sol(k,x,P):
     else: return a
 
 ans = sol(K, X, road)
+ans.sort()
 
-for i in ans:
-    print(i)
+for i in range(len(ans)):
+    if ans[i] != ans[i-1]:
+        print(ans[i])
