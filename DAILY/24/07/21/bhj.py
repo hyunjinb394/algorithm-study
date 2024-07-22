@@ -4,6 +4,7 @@
 # 방문한 배추는 1 -> 0 으로 처리
 # 2차원 배열로 배추 위치 기록
 
+# sys에서 사용할 객체만 임포트 하기 
 from sys import stdin, setrecursionlimit
 setrecursionlimit(10000)
 
